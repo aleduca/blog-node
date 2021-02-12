@@ -1,0 +1,11 @@
+<h2>Login</h2>
+
+{{ messages.errorLogged }}
+
+<form action="/login" method="post">
+    <input type="text" name="email">
+    {{ messages.email }}
+    <input type="password" name="password">
+    {{ messages.password }}
+    <button type="submit">Login</button>
+</form>

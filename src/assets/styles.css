@@ -1,0 +1,209 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#content-sidebar {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#content {
+  width: 80%;
+  background-color: aqua;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 5px;
+}
+
+#posts {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#sidebar-right {
+  width: 20%;
+  background-color: bisque;
+  padding: 5px;
+  margin-left: 3px;
+}
+
+.post {
+  width: 21%;
+  padding: 10px;
+  background-color: white;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  margin-right: 11px;
+}
+
+.post-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#page-single {
+  width: 85%;
+  background-color: aqua;
+  padding: 5px;
+}
+
+#post-por {
+  font-size: 14px;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: blue;
+}
+
+ul#menu-sidebar {
+  list-style: none;
+  padding: 0;
+}
+
+ul#categories-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+ul#categories-list li {
+  width: 21%;
+  margin-bottom: 10px;
+}
+
+#post-search {
+  width: 100%;
+  background-color: aqua;
+  padding: 5px;
+}
+
+#logo {
+  background-color: crimson;
+  width: 40%;
+}
+
+#logo a {
+  color: white;
+}
+
+#logged_status {
+  color: white;
+  font-size: 18px;
+}
+
+#logged_status a {
+  color: red;
+}
+
+.comment {
+  background-color: cadetblue;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+#footer {
+  text-align: center;
+}
+
+@media only screen and (max-width: 654px) {
+  #content-sidebar {
+    display: block;
+  }
+
+  #content {
+    width: 100%;
+    display: block;
+    background-color: aqua;
+  }
+
+  #posts {
+    margin-left: 0;
+  }
+
+  .post {
+    width: 94%;
+  }
+
+  #sidebar-right {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  #page-single {
+    width: 100%;
+  }
+
+  ul#categories-list {
+    list-style: none;
+    display: block;
+    padding: 0;
+  }
+
+  #logo {
+    background-color: crimson;
+    width: 40%;
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1000px) {
+  .post {
+    width: 19%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 15px;
+    margin-bottom: 5px;
+  }
+
+  #posts {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (min-width: 654px) and (max-width: 767px) {
+  #content-sidebar {
+    display: block;
+  }
+
+  #content {
+    width: 100%;
+    display: block;
+    background-color: aqua;
+  }
+
+  .post {
+    width: 96%;
+  }
+
+  #posts {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #page-single {
+    width: 100%;
+  }
+
+  #sidebar-right {
+    width: 100%;
+    margin-top: 10px;
+    background-color: bisque;
+  }
+
+  #logo {
+    background-color: crimson;
+    width: 40%;
+    font-size: 12px;
+  }
+}
