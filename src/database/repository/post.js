@@ -1,39 +1,37 @@
-const { paginate } = require('./paginate');
-const { post, user, cover, comment, Sequelize } = require('../models');
+const { post, user, comment, avatar } = require('../models');
 
-exports.inHome = function (request) {
-  const posts = post.findAll({
-    limit: 12,
-    order: [['id', 'desc']],
-    subQuery: false,
-    attributes: [
-      'title',
-      'slug',
-      'content',
-      [
-        Sequelize.fn('count', Sequelize.col('comments.postId')),
-        'commentsCount',
-      ],
-    ],
+exports.inPost = function (slug) {
+  return post.findOne({
+    attributes: ['id', 'title', 'content'],
+    where: {
+      slug,
+    },
     include: [
       {
         attributes: ['firstName', 'lastName'],
         model: user,
         as: 'user',
+        include: {
+          attributes: ['path'],
+          model: avatar,
+          as: 'avatar',
+        },
       },
       {
-        attributes: ['path'],
-        model: cover,
-        as: 'cover',
-      },
-      {
-        attributes: [],
+        attributes: ['id', 'comment'],
         model: comment,
         as: 'comments',
+        include: {
+          attributes: ['firstName', 'lastName', 'isAdmin'],
+          model: user,
+          as: 'user',
+          include: {
+            attributes: ['path'],
+            model: avatar,
+            as: 'avatar',
+          },
+        },
       },
     ],
-    group: ['post.id'],
   });
-
-  return posts;
 };

@@ -1,4 +1,11 @@
 <div id="header">
-  <div id="logo">Logo</div>
-  <div id="logged_status">Bem vindo, visitante</div>
+  <div id="logo"><a href="/">Logo</a></div>
+  <div id="logged_status">
+    Bem-Vindo
+    {{#if user}}
+      {{ user.firstName }} {{ user.lastName }} | <a href="/login/logout">Logout</a>
+    {{else}}
+      visitante
+    {{/if}}
+  </div>
 </div>

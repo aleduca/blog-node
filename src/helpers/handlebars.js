@@ -19,6 +19,11 @@ exports.init = function (app) {
 
           return str.replace(/(<([^>]+)>)/gi, '');
         },
+        if_eq: function (a, b, opts) {
+          if (a == b) {
+            return opts.fn(this);
+          }
+        },
         date: function () {
           return new Date().getFullYear();
         },

@@ -1,0 +1,80 @@
+<div id="page-single">
+
+    <h2>Post {{ post.dataValues.title }}</h2>
+    <small>Por: {{ post.dataValues.user.dataValues.firstName }} {{ post.dataValues.user.dataValues.lastName }}</small>
+
+    <p>{{{ post.dataValues.content }}}</p>
+
+    <section id="comments">
+
+      <hr>
+
+      {{#if user}}
+        <h3>Faça seu comentário</h3>
+        <textarea cols="20" rows="7" class="form-control" placeholder="Faça seu comentário" id="comment"></textarea>
+        <button id="btnComment" data-id="{{ post.dataValues.id }}">Comentar</button>
+
+      {{else}}
+        <p>Para comentar você precisa estar logado | <a href="/login">Logar</a></p>
+      {{/if}}
+
+
+      <hr>
+      <h2>Comentários ({{post.dataValues.comments.length}})</h2>
+
+      {{#each post.dataValues.comments}}
+
+        <div class="comment {{#if_eq this.user.dataValues.isAdmin  1}} isAdmin {{/if_eq}}">
+          <img src="/{{ this.user.dataValues.avatar.dataValues.path }}" alt="avatar" width="40" height="30"> Comentário de: <small>{{ this.user.dataValues.firstName }} {{ this.user.dataValues.lastName }}</small>
+
+          <p>{{ this.dataValues.comment }}</p>
+        </div>
+
+      {{/each}}
+
+
+    </section>
+
+
+</div>
+
+{{#section 'scripts'}}
+
+  <script>
+    const btnComment = document.querySelector('#btnComment');
+    const comment = document.querySelector('#comment');
+
+    btnComment.addEventListener('click', async function(){
+      const postId = this.getAttribute('data-id');
+      const commentText = comment.value;
+
+      if(commentText == ''){
+        alert('Digite um comentário');
+        return;
+      }
+
+      try{
+        const {data} = await axios.post('/comment',{postId,comment:commentText});
+
+        if(data === 'created'){
+          Swal.fire(
+            'Comentário cadastrado!',
+            'Parabéns você fez um comentário',
+            'error'
+          )
+        }
+
+      }catch(error){
+        if(error?.response?.data){
+          Swal.fire(
+            'Ocorreu um erro!',
+            'Ocorreu um erro ao cadastrar seu comentário, por favor tente novamente',
+            'error'
+          )
+        }
+      }
+
+
+    });
+  </script>
+{{/section}}

@@ -1,11 +1,18 @@
+<div id="page-single">
 <h2>Login</h2>
 
-{{ messages.errorLogged }}
+{{ messages.loginMessage }}
 
-<form action="/login" method="post">
-    <input type="text" name="email">
-    {{ messages.email }}
-    <input type="password" name="password">
-    {{ messages.password }}
-    <button type="submit">Login</button>
-</form>
+  {{#if user}}
+  <h3>Você já está logado !</h3>
+  {{else}}
+
+  <form action="/login" method="post">
+      <input type="text" name="email" value="Paulo_Souza38@bol.com.br">
+      {{messages.email}}
+      <input type="password" name="password" value="123">
+      {{messages.password}}
+      <button type="submit">Login</button>
+  </form>
+  {{/if}}
+</div>

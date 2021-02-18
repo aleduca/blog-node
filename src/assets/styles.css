@@ -111,6 +111,11 @@ ul#categories-list li {
   margin-bottom: 5px;
 }
 
+.isAdmin {
+  background-color: blueviolet;
+  margin-left: 10px;
+}
+
 #footer {
   text-align: center;
 }
