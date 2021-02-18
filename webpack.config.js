@@ -5,10 +5,10 @@ const srcPath = path.resolve(__dirname, 'src');
 module.exports = {
   mode: process.env.NODE_ENV,
   entry: {
-    comment: [srcPath + '/components/comment.js'],
+    comment: ['./components/comment.js'],
   },
   output: {
-    path: srcPath + '/dist',
+    path: srcPath + '/dist/js',
     filename: '[name].js',
   },
   module: {

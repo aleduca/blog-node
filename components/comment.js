@@ -1,3 +1,6 @@
+import Swal from 'sweetalert2';
+import axios from './helpers/http';
+
 const btnComment = document.querySelector('#btnComment');
 const comment = document.querySelector('#comment');
 
