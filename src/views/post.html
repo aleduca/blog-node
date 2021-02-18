@@ -25,7 +25,7 @@
       {{#each post.dataValues.comments}}
 
         <div class="comment {{#if_eq this.user.dataValues.isAdmin  1}} isAdmin {{/if_eq}}">
-          <img src="/{{ this.user.dataValues.avatar.dataValues.path }}" alt="avatar" width="40" height="30"> Comentário de: <small>{{ this.user.dataValues.firstName }} {{ this.user.dataValues.lastName }}</small>
+          <img src="/assets/{{ this.user.dataValues.avatar.dataValues.path }}" alt="avatar" width="40" height="30"> Comentário de: <small>{{ this.user.dataValues.firstName }} {{ this.user.dataValues.lastName }}</small>
 
           <p>{{ this.dataValues.comment }}</p>
         </div>
@@ -40,41 +40,5 @@
 
 {{#section 'scripts'}}
 
-  <script>
-    const btnComment = document.querySelector('#btnComment');
-    const comment = document.querySelector('#comment');
-
-    btnComment.addEventListener('click', async function(){
-      const postId = this.getAttribute('data-id');
-      const commentText = comment.value;
-
-      if(commentText == ''){
-        alert('Digite um comentário');
-        return;
-      }
-
-      try{
-        const {data} = await axios.post('/comment',{postId,comment:commentText});
-
-        if(data === 'created'){
-          Swal.fire(
-            'Comentário cadastrado!',
-            'Parabéns você fez um comentário',
-            'error'
-          )
-        }
-
-      }catch(error){
-        if(error?.response?.data){
-          Swal.fire(
-            'Ocorreu um erro!',
-            'Ocorreu um erro ao cadastrar seu comentário, por favor tente novamente',
-            'error'
-          )
-        }
-      }
-
-
-    });
-  </script>
+  <script src="/comment.js"></script>
 {{/section}}

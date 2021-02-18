@@ -12,7 +12,7 @@ initSession(app);
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'assets')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use(function (request, response, next) {
   if (request?.session?.user) {
