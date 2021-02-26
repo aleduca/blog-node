@@ -12,7 +12,7 @@ initSession(app);
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, '..', 'frontend', 'assets')));
 
 app.use(function (request, response, next) {
   if (request?.session?.user) {
@@ -25,5 +25,7 @@ app.use('/', require('./routes/site'));
 app.use('/post', require('./routes/post'));
 app.use('/comment', require('./routes/comment'));
 app.use('/login', require('./routes/login'));
+app.use('/search', require('./routes/search'));
+app.use('/categories', require('./routes/category'));
 
 app.listen(process.env.PORT || 3000);

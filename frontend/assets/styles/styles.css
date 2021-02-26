@@ -105,6 +105,16 @@ ul#categories-list li {
   color: red;
 }
 
+#post-search {
+  width: 100%;
+  background-color: aqua;
+  padding: 5px;
+}
+
+#post-search form {
+  display: flex;
+}
+
 .comment {
   background-color: cadetblue;
   padding: 10px;

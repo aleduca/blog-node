@@ -32,6 +32,7 @@ exports.paginate = {
     }
   },
   render: function (total) {
+    if (typeof total !== 'number') total = total.length;
     const totalPages = Math.ceil(total / this.limit);
 
     let startLinks = 1;

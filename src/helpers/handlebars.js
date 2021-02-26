@@ -23,6 +23,7 @@ exports.init = function (app) {
           if (a == b) {
             return opts.fn(this);
           }
+          return opts.inverse(this);
         },
         date: function () {
           return new Date().getFullYear();

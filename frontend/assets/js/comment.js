@@ -86,27 +86,27 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./components/comment.js":
-/*!*******************************!*\
-  !*** ./components/comment.js ***!
-  \*******************************/
+/***/ "./frontend/components/comment.js":
+/*!****************************************!*\
+  !*** ./frontend/components/comment.js ***!
+  \****************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ \"./node_modules/@babel/runtime/regenerator/index.js\");\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ \"./node_modules/@babel/runtime/helpers/asyncToGenerator.js\");\n/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! sweetalert2 */ \"./node_modules/sweetalert2/dist/sweetalert2.all.js\");\n/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _helpers_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers/http */ \"./components/helpers/http.js\");\n\n\n\n\nvar btnComment = document.querySelector('#btnComment');\nvar comment = document.querySelector('#comment');\nbtnComment.addEventListener('click', /*#__PURE__*/_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {\n  var postId, commentText, _yield$axios$post, data, _error$response;\n\n  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {\n    while (1) {\n      switch (_context.prev = _context.next) {\n        case 0:\n          postId = this.getAttribute('data-id');\n          commentText = comment.value;\n\n          if (!(commentText == '')) {\n            _context.next = 5;\n            break;\n          }\n\n          alert('Digite um comentário');\n          return _context.abrupt(\"return\");\n\n        case 5:\n          _context.prev = 5;\n          _context.next = 8;\n          return _helpers_http__WEBPACK_IMPORTED_MODULE_3__[\"default\"].post('/comment', {\n            postId: postId,\n            comment: commentText\n          });\n\n        case 8:\n          _yield$axios$post = _context.sent;\n          data = _yield$axios$post.data;\n\n          if (data === 'created') {\n            sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.fire('Comentário cadastrado!', 'Parabéns você fez um comentário', 'success');\n            comment.value = '';\n          }\n\n          _context.next = 16;\n          break;\n\n        case 13:\n          _context.prev = 13;\n          _context.t0 = _context[\"catch\"](5);\n\n          if (_context.t0 !== null && _context.t0 !== void 0 && (_error$response = _context.t0.response) !== null && _error$response !== void 0 && _error$response.data) {\n            sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.fire('Ocorreu um erro!', 'Ocorreu um erro ao cadastrar seu comentário, por favor tente novamente', 'error');\n          }\n\n        case 16:\n        case \"end\":\n          return _context.stop();\n      }\n    }\n  }, _callee, this, [[5, 13]]);\n})));\n\n//# sourceURL=webpack:///./components/comment.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ \"./node_modules/@babel/runtime/regenerator/index.js\");\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ \"./node_modules/@babel/runtime/helpers/asyncToGenerator.js\");\n/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! sweetalert2 */ \"./node_modules/sweetalert2/dist/sweetalert2.all.js\");\n/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _helpers_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers/http */ \"./frontend/components/helpers/http.js\");\n\n\n\n\nvar btnComment = document.querySelector('#btnComment');\nvar comment = document.querySelector('#comment');\nbtnComment.addEventListener('click', /*#__PURE__*/_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {\n  var postId, commentText, _yield$axios$post, data, _error$response;\n\n  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {\n    while (1) {\n      switch (_context.prev = _context.next) {\n        case 0:\n          postId = this.getAttribute('data-id');\n          commentText = comment.value;\n\n          if (!(commentText == '')) {\n            _context.next = 5;\n            break;\n          }\n\n          alert('Digite um comentário');\n          return _context.abrupt(\"return\");\n\n        case 5:\n          _context.prev = 5;\n          _context.next = 8;\n          return _helpers_http__WEBPACK_IMPORTED_MODULE_3__[\"default\"].post('/comment', {\n            postId: postId,\n            comment: commentText\n          });\n\n        case 8:\n          _yield$axios$post = _context.sent;\n          data = _yield$axios$post.data;\n\n          if (data === 'created') {\n            sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.fire('Comentário cadastrado!', 'Parabéns você fez um comentário', 'success');\n            comment.value = '';\n          }\n\n          _context.next = 16;\n          break;\n\n        case 13:\n          _context.prev = 13;\n          _context.t0 = _context[\"catch\"](5);\n\n          if (_context.t0 !== null && _context.t0 !== void 0 && (_error$response = _context.t0.response) !== null && _error$response !== void 0 && _error$response.data) {\n            sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.fire('Ocorreu um erro!', 'Ocorreu um erro ao cadastrar seu comentário, por favor tente novamente', 'error');\n          }\n\n        case 16:\n        case \"end\":\n          return _context.stop();\n      }\n    }\n  }, _callee, this, [[5, 13]]);\n})));\n\n//# sourceURL=webpack:///./frontend/components/comment.js?");
 
 /***/ }),
 
-/***/ "./components/helpers/http.js":
-/*!************************************!*\
-  !*** ./components/helpers/http.js ***!
-  \************************************/
+/***/ "./frontend/components/helpers/http.js":
+/*!*********************************************!*\
+  !*** ./frontend/components/helpers/http.js ***!
+  \*********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nvar axios = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n\nvar instance = axios.create({\n  baseURL: 'http://localhost:3000'\n});\n/* harmony default export */ __webpack_exports__[\"default\"] = (instance);\n\n//# sourceURL=webpack:///./components/helpers/http.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nvar axios = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n\nvar instance = axios.create({\n  baseURL: 'http://localhost:3000'\n});\n/* harmony default export */ __webpack_exports__[\"default\"] = (instance);\n\n//# sourceURL=webpack:///./frontend/components/helpers/http.js?");
 
 /***/ }),
 
@@ -489,13 +489,13 @@ eval("/*!\n* sweetalert2 v10.15.2\n* Released under the MIT License.\n*/\n(funct
 /***/ }),
 
 /***/ 0:
-/*!*************************************!*\
-  !*** multi ./components/comment.js ***!
-  \*************************************/
+/*!**********************************************!*\
+  !*** multi ./frontend/components/comment.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__(/*! ./components/comment.js */\"./components/comment.js\");\n\n\n//# sourceURL=webpack:///multi_./components/comment.js?");
+eval("module.exports = __webpack_require__(/*! ./frontend/components/comment.js */\"./frontend/components/comment.js\");\n\n\n//# sourceURL=webpack:///multi_./frontend/components/comment.js?");
 
 /***/ })
 

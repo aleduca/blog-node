@@ -1,14 +1,13 @@
 const path = require('path');
-
-const srcPath = path.resolve(__dirname, 'src');
+const { PassThrough } = require('stream');
 
 module.exports = {
   mode: process.env.NODE_ENV,
   entry: {
-    comment: ['./components/comment.js'],
+    comment: ['./frontend/components/comment.js'],
   },
   output: {
-    path: srcPath + '/dist/js',
+    path: path.resolve('frontend', 'assets', 'js'),
     filename: '[name].js',
   },
   module: {

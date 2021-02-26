@@ -1,0 +1,12 @@
+<div id="page-single">
+  <h2>Categorias ({{ categories.length }})</h2>
+
+  <ul id="categories-list">
+    {{#each categories}}
+      <li>
+        <a href="{{ this.dataValues.slug }}">{{ this.dataValues.name }} ({{ this.dataValues.postsCount }})</a>
+      </li>
+    {{/each}}
+  </ul>
+
+</div>

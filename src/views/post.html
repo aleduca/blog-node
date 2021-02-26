@@ -25,7 +25,7 @@
       {{#each post.dataValues.comments}}
 
         <div class="comment {{#if_eq this.user.dataValues.isAdmin  1}} isAdmin {{/if_eq}}">
-          <img src="/assets/{{ this.user.dataValues.avatar.dataValues.path }}" alt="avatar" width="40" height="30"> Comentário de: <small>{{ this.user.dataValues.firstName }} {{ this.user.dataValues.lastName }}</small>
+          <img src="/{{ this.user.dataValues.avatar.dataValues.path }}" alt="avatar" width="40" height="30"> Comentário de: <small>{{ this.user.dataValues.firstName }} {{ this.user.dataValues.lastName }}</small>
 
           <p>{{ this.dataValues.comment }}</p>
         </div>

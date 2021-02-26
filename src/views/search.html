@@ -1,0 +1,26 @@
+<div id="content">
+<h2>Busca: ({{ count.length }})</h2>
+
+{{> search }}
+
+<div id="posts">
+  {{#if_eq count.length 0}}
+    <h3>Não encontramos nenhum resultado para sua busca.</h3>
+  {{else}}
+    {{#each posts}}
+
+    <div class="post">
+      <div class="post-title"><a href="/post/{{ this.dataValues.slug }}">{{ this.dataValues.title }}</a>({{ this.dataValues.commentsCount }})</div>
+      <div class="post-image">
+        <a href="/post/{{ this.dataValues.slug }}"><img src="/{{ this.dataValues.cover.dataValues.path }}" alt="" width="100%"></a>
+      </div>
+      <div class="post-description">{{truncate this.dataValues.content }}</div>
+      <div class="post-more"><a href="/post/{{ this.dataValues.slug }}">Ver mais...</a></div>
+    </div>
+
+    {{/each}}
+  {{/if_eq}}
+</div>
+{{{ links }}}
+
+</div>
