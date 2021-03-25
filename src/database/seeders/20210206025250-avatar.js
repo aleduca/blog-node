@@ -2,13 +2,13 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 100; i++) {
       await queryInterface.bulkInsert(
         'avatars',
         [
           {
-            path: 'eu.png',
-            userId: Math.ceil(Math.random() * 10),
+            path: 'images/eu.png',
+            userId: Math.ceil(Math.random() * 100),
           },
         ],
         {}

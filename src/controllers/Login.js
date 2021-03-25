@@ -1,5 +1,5 @@
 const { validationResult } = require('express-validator');
-const { findBy } = require('../database/repository/user');
+const { findWithAvatar } = require('../database/repository/user');
 const { MASTER_DIR } = require('../helpers/constants');
 const { flash } = require('../helpers/flash');
 const bcrypt = require('bcrypt');
@@ -20,7 +20,7 @@ exports.store = async function (request, response) {
       return response.redirect('/login');
     }
 
-    const userFind = await findBy('email', request.body['email']);
+    const userFind = await findWithAvatar('email', request.body['email']);
 
     if (!userFind) {
       request.session.messages = { loginMessage: 'Usuário ou senha inválidos' };

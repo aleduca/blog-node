@@ -3,7 +3,7 @@
   <div id="logged_status">
     Bem-Vindo
     {{#if user}}
-      {{ user.firstName }} {{ user.lastName }} | <a href="/login/logout">Logout</a>
+      {{ user.firstName }} {{ user.lastName }} | <a href="/login/logout">Logout</a> | <a href="/user/edit">Edit User</a>
     {{else}}
       visitante
     {{/if}}

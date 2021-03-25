@@ -1,16 +1,14 @@
 'use strict';
 
-const faker = require('faker/locale/pt_BR');
-
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     for (let i = 0; i < 100; i++) {
       await queryInterface.bulkInsert(
-        'categories',
+        'categoryPosts',
         [
           {
-            name: faker.commerce.department(),
-            slug: faker.lorem.slug(),
+            categoryId: Math.ceil(Math.random() * 100),
+            postId: Math.ceil(Math.random() * 100),
           },
         ],
         {}
@@ -19,6 +17,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete('categories', null, {});
+    await queryInterface.bulkDelete('categoryPosts', null, {});
   },
 };

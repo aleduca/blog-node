@@ -1,16 +1,16 @@
-const { categoryWithPosts } = require('../database/repository/category');
+const { postsCategory } = require('../database/repository/search');
 const { MASTER_DIR } = require('../helpers/constants');
 
 exports.index = async function (request, response) {
   try {
+    const searched = request.query['s'];
     const slug = request.params['slug'];
 
-    // return response.json(slug);
-    if (!slug) {
+    if (!searched || !slug) {
       return response.redirect('/');
     }
 
-    const posts = await categoryWithPosts(request, slug);
+    const posts = await postsCategory(request, slug, searched);
 
     // return response.json(posts);
 
@@ -19,6 +19,8 @@ exports.index = async function (request, response) {
       title: 'Category',
       ...posts,
     });
+
+    return response.json('searched');
   } catch (error) {
     console.log(error);
   }

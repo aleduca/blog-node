@@ -1,0 +1,5 @@
+A fazer:
+    ✔ Alterar no model o id para foreignKey @done(21-03-04 23:27)
+    ✔ Remover o include user na lista dos posts da categoria @done(21-03-04 23:28)
+    ✔ Usar o attributes:[] ao invés de  attributes: { include: [], exclude: ['createdAt', 'updatedAt', 'id']} em category repository @done(21-03-04 23:29)
+    ☐ Fazer sistema de busca

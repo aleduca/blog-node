@@ -26,6 +26,8 @@ app.use('/post', require('./routes/post'));
 app.use('/comment', require('./routes/comment'));
 app.use('/login', require('./routes/login'));
 app.use('/search', require('./routes/search'));
-app.use('/categories', require('./routes/category'));
+app.use('/categories', require('./routes/categories'));
+app.use('/category', require('./routes/category'));
+app.use('/profile', require('./routes/profile'));
 
 app.listen(process.env.PORT || 3000);

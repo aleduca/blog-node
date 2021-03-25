@@ -22,9 +22,11 @@
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
     "express-validator": "^6.9.0",
+    "formidable": "^1.2.2",
     "mysql2": "^2.2.5",
     "redis": "^3.0.2",
     "sequelize": "^6.3.5",
+    "sharp": "^0.27.2",
     "sweetalert2": "^10.15.2"
   },
   "devDependencies": {

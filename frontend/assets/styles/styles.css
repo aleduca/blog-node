@@ -46,6 +46,10 @@ body {
   font-weight: bold;
 }
 
+#preview {
+  display: none;
+}
+
 #page-single {
   width: 85%;
   background-color: aqua;
@@ -124,6 +128,35 @@ ul#categories-list li {
 .isAdmin {
   background-color: blueviolet;
   margin-left: 10px;
+}
+
+#edit-user {
+  display: flex;
+  justify-content: space-between;
+}
+
+#edit-user > #image {
+  width: 30%;
+  border: solid 1px red;
+  padding: 10px;
+}
+
+#edit-user > #data {
+  width: 68%;
+  border: solid 1px red;
+  padding: 10px;
+}
+
+#edit-user-password {
+  border: solid 1px red;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+#upload-preview {
+  display: flex;
+  justify-content: space-between;
 }
 
 #footer {

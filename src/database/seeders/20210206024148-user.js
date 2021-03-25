@@ -5,7 +5,7 @@ const faker = require('faker/locale/pt_BR');
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 100; i++) {
       await queryInterface.bulkInsert(
         'users',
         [

@@ -6,13 +6,17 @@ exports.paginate = {
   linksPerPage: 5,
   setLimit: function (limit) {
     this.limit = limit;
+    return this;
   },
   setRequest: function (request) {
+    console.log(this);
     this.currentPage = request.query['page'] ?? 1;
     this.setRoute(request);
+    return this;
   },
   setOptions: function (options) {
     this.options = options;
+    return this;
   },
   paginate: function (model) {
     const offset = this.currentPage * this.limit - this.limit;
@@ -30,6 +34,10 @@ exports.paginate = {
         this.route += `${key}=${query[key]}&`;
       }
     }
+  },
+  setDefaultProperties: function () {
+    this.limit = 12;
+    this.linksPerPage = 5;
   },
   render: function (total) {
     if (typeof total !== 'number') total = total.length;
@@ -67,6 +75,8 @@ exports.paginate = {
     }
 
     links += `<ul>`;
+
+    this.setDefaultProperties();
 
     return links;
   },

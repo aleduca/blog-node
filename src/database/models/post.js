@@ -18,6 +18,12 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'postId',
         as: 'comments',
       });
+
+      post.belongsToMany(models.category, {
+        through: 'categoryPosts',
+        foreignKey: 'postId',
+        as: 'categories',
+      });
     }
   }
   post.init(

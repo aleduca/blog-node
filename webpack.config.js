@@ -5,6 +5,7 @@ module.exports = {
   mode: process.env.NODE_ENV,
   entry: {
     comment: ['./frontend/components/comment.js'],
+    userEdit: ['./frontend/components/userEdit.js'],
   },
   output: {
     path: path.resolve('frontend', 'assets', 'js'),

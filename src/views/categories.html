@@ -4,7 +4,7 @@
   <ul id="categories-list">
     {{#each categories}}
       <li>
-        <a href="{{ this.dataValues.slug }}">{{ this.dataValues.name }} ({{ this.dataValues.postsCount }})</a>
+        <a href="/category/{{ this.dataValues.slug }}">{{ this.dataValues.name }} ({{ this.dataValues.postsCount }})</a>
       </li>
     {{/each}}
   </ul>
